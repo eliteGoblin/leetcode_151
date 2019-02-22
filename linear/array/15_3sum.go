@@ -27,14 +27,8 @@ func ThreeSum(nums []int) [][]int {
 				}
 			} else if sum < 0 {
 				first++
-				for first < last && nums[first] == nums[first-1] {
-					first++
-				}
 			} else {
 				last--
-				for first < last && nums[last] == nums[last+1] {
-					last--
-				}
 			}
 		}
 	}

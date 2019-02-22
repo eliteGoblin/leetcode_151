@@ -34,17 +34,9 @@ https://www.geeksforgeeks.org/find-a-triplet-that-sum-to-a-given-value/
 两个关键:
 
 *  ksum: 用 O(n^(k-1))复杂度找到
-*  不重复的三元组: 如何跳过重复元素
+*  不重复的三元组: 如何跳过重复元素: leetcpde.pdf 有些判断不必要，见自己提交的code.
+    +  仅当找到解的时候，需要跳到下一个，否则如果不是解，肯定要往前或者往后走，并不会重复, 重复的case: [-2,0,0,2,2]
 
-跳过重复元素并不是简单的看到下一个和当前一样就跳到下一个，比如会错失[-2,1,1]这样的例子
-```
-Input
-[-4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0]
-Output
-[[-5,1,4],[-4,0,4],[-4,1,3],[-2,-2,4]]
-Expected
-[[-5,1,4],[-4,0,4],[-4,1,3],[-2,-2,4],[-2,1,1],[0,0,0]]
-```
 
 
 #### 18 4sum
@@ -83,3 +75,5 @@ Expected
 
 [[LeetCode] Single Number II 单独的数字之二](http://www.cnblogs.com/grandyang/p/4263927.html)  
 [Find the element that appears once](https://www.geeksforgeeks.org/find-the-element-that-appears-once/)  
+
+
