@@ -71,6 +71,9 @@ return grid[i-1][j-1]
 ## 139. Word Break
 
 *  Memo法　WA了一次，用小case, TDD
+*  DP一直WA，没耐心
+
+## 
 
 ## 遗留
 

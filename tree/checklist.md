@@ -1,6 +1,7 @@
 ## Tree Input Visualize Tool
 
 *  98. Validate Binary Search Tree
+*  难度高的morris直接放弃
 
 ## Morris List
 

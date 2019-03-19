@@ -45,3 +45,7 @@
 *  双链表的不同
     +  心里有数，修改哪些link: insert, 四个；　cur.next cur.pre;pre.next;next.pre
     +  记录tail时，任何修改node的: move, delete都需要判断tail是否需要变化(自己就是在moveToHead时，忘记修改tail)
+
+## 460. LFU Cache
+
+*  没做过，一起练习

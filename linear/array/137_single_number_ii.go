@@ -21,3 +21,18 @@ func SingleNumberII(nums []int) int {
 	}
 	return res
 }
+
+func singleNumberii(nums []int) int {
+	var res uint
+	var i uint
+	for i = 0; i < 64; i++ {
+		var count uint
+		for j := 0; j < len(nums); j++ {
+			if nums[j]&(1<<uint(i)) > 0 {
+				count++
+			}
+		}
+		res |= (count % 3) << i
+	}
+	return int(res)
+}
