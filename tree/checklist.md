@@ -3,10 +3,10 @@
 *  98. Validate Binary Search Tree
 *  难度高的morris直接放弃
 
-## Morris List
+## stack iterative
 
 *  144
-*  94
+*  94: 中序遍历掌握Morris
 *  145
 *  99
 
@@ -44,13 +44,13 @@
 
 ## 117. Populating Next Right Pointers in Each Node II
 
-*  只有题目不允许的o(n) sDon't spend more than an hour on any question. If you can't figure out the solution, mark it and revisit later.
-*  [Grandyang](http://wwwDon't spend more than an hour on any question. If you can't figure out the solution, mark it and revisit later./4290148.html)
+*  只有题目不允许的o(n)
+*  [Grandyang](http://www./4290148.html)
 
-## 105. Construct Binary Don't spend more than an hour on any question. If you can't figure out the solution, mark it and revisit later.norder Traversal
+## 105. Construct Binary norder Traversal
 
-*  loop variable 忘记++导Don't spend more than an hour on any question. If you can't figure out the solution, mark it and revisit later.
-*  经典题，值得回顾，下标Don't spend more than an hour on any question. If you can't figure out the solution, mark it and revisit later.
+*  loop variable 忘记++导
+*  经典题，值得回顾，下标
 
 ## 96. Unique Binary Search Trees
 

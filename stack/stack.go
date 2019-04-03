@@ -5,33 +5,43 @@ import (
 )
 
 type Stack struct {
-	s []interface{}
+	curPos int
+	stk    []interface{}
 }
 
 func NewStack() *Stack {
-	return &Stack{make([]interface{}, 0, 4096)}
+	return &Stack{
+		stk:    make([]interface{}, 2048),
+		curPos: 0,
+	}
 }
 
 func (s *Stack) Top() interface{} {
-	return s.s[len(s.s)-1]
+	if s.curPos == 0 {
+		return nil
+	}
+	return s.stk[s.curPos-1]
 }
 
 func (s *Stack) Push(v interface{}) {
-	s.s = append(s.s, v)
+	if s.curPos >= len(s.stk) {
+		newSpace := make([]interface{}, len(s.stk))
+		s.stk = append(s.stk, newSpace...)
+	}
+	s.stk[s.curPos] = v
+	s.curPos++
+
 }
 
 func (s *Stack) Pop() (interface{}, error) {
-
-	l := len(s.s)
-	if l == 0 {
-		return 0, errors.New("Empty Stack")
+	if s.curPos == 0 {
+		return nil, errors.New("underflow")
 	}
-
-	res := s.s[l-1]
-	s.s = s.s[:l-1]
+	res := s.stk[s.curPos-1]
+	s.curPos--
 	return res, nil
 }
 
 func (s *Stack) Empty() bool {
-	return len(s.s) == 0
+	return s.curPos == 0
 }

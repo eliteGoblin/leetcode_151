@@ -83,9 +83,67 @@ carry = value / 10
 e.(pair).Value = 2 //编译失败
 ```
 
+## 98. Validate Binary Search Tree
+
+变量类型转换
+```
+UINT_MAX = uint(^0) // overflow, -1 --> uint
+UINT_MAX = ^uint(0) // pass, 必须是uint类型，否则会认为是-1
+INT_MAX = int(UINT_MAX >> 1)
+```
+* 注意题意：仅有不等时合法
+
+## Tree Traversal
+
+*  stack 自己实现: 熟悉，用这个模板: stack/stack.go
+掌握用stack遍历
+*  Preorder: 144
+*  Inorder: 94
+*  Postorder: 145
+
+## 99. Recover Binary Search Tree
+
+*  掌握利用递归的解法，不管morris
+*  双指针: 当逆序的两节点相邻时，与不相邻时，逻辑不一样，这里WA。答案参见自己代码
+
+[Recover Binary Search Tree 复原二叉搜索树](http://www.cnblogs.com/grandyang/p/4298069.html)
+
+## 107. Binary Tree Level Order Traversal II
+
+*  双缓存，不必每次考虑边界
+*  递归解法思路不错，见第一次提交代码, 递归解法: 传入数组pointer后，不能新建变量: res := *pres, 这样改的还是拷贝，并没有改origin数组，会导致overflow
+
+## 117. Populating Next Right Pointers in Each Node II
+
+*  题目不允许space O(n)的解法
+*  还是不会，见自己的解答; 注意WA, root -> right 漏了 -> next
+
+## 96 Unique Binary Search Trees
+
+*  不难题，dp简单练习
+*  简单代码问题上一直WA: n - j 应该为 i - j, 验算没发现，一直打log才发现
+
+## 95. Unique Binary Search Trees II
+
+
+*  上题的基础上输出结果树
+*  自己的解答参考简化思路，巧妙的点:
+    +  只用下标，不用传递数组
+    +  []*TreeNode{nil}的妙用，即使是空，也会执行至少一次，而不会发生自己担心的跳过循环的情况
+
+## 98. Validate Binary Search Tree
+
+*  注意相等的情况，定义不包含相等，意味着相等的情况不满足题意
+
+## TODO
+
+*  Morris Inorder
+*  Convert Sorted List to Binary Search Tree
+
 
 ## General
 
 *  -- 写成 ++
 *  doc写的 type mismatch, 没有取数组下标
 *  取数组下标赋值时切记判断是否overflow, 比如只想初始化数组，res[0] = xx res[1] = xx 确保数组len
+*  for i < j{} 总忘记写i++,j--
